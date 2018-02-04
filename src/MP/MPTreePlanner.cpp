@@ -13,18 +13,6 @@ namespace MP
     m_probSteer       = 1;
     m_goalBias        = 0.05;
     m_cfgTarget       = NULL;
-
-    if (m_robotType == RCAR)
-    {
-      printf("Use RobotCar\n");
-      m_sim = new MPRobotCar();
-    }
-    else if (m_robotType == RBULL)
-    {
-      printf("Use RobotBullet\n");
-      m_sim = new MPBVehicleSimulator();
-    }
-    m_sim->SetScene(&m_scene);
   }
 
   MPTreePlanner::~MPTreePlanner(void)
