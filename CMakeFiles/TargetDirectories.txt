@@ -1,3 +1,0 @@
-/home/youbot/Dropbox/workspace/BasicFramework/CMakeFiles/rebuild_cache.dir
-/home/youbot/Dropbox/workspace/BasicFramework/CMakeFiles/Runner.dir
-/home/youbot/Dropbox/workspace/BasicFramework/CMakeFiles/edit_cache.dir
