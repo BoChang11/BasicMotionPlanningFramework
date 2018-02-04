@@ -1,9 +1,9 @@
-#include "MP/MPEPPlanner.hpp"
+#include "MP/MPGUSTPlanner.hpp"
 #include "Utils/Colormap.hpp"
 
 namespace MP
 {
-  MPEPPlanner::MPEPPlanner(void) : MPTreePlanner()
+  MPGUSTPlanner::MPGUSTPlanner(void) : MPTreePlanner()
   {
     m_wmin = Constants::EPSILON;
     m_iter = 0;
@@ -13,14 +13,14 @@ namespace MP
     m_cutoff         = 0.7;
   }
 
-  MPEPPlanner::~MPEPPlanner(void)
+  MPGUSTPlanner::~MPGUSTPlanner(void)
   {
     for(auto it = m_map.begin(); it != m_map.end(); ++it)
     if(it->second)
     delete it->second;
   }
 
-  void MPEPPlanner::Run(const int nrIters)
+  void MPGUSTPlanner::Run(const int nrIters)
   {
     if(m_vertices.size() == 0)
     {
@@ -48,7 +48,7 @@ namespace MP
 
   }
 
-void MPEPPlanner::CompleteARData(const int key, ARData * const data)
+void MPGUSTPlanner::CompleteARData(const int key, ARData * const data)
 {
   //printf("inserting key %d\n", key);
   m_map.insert(std::make_pair(key, data));
@@ -66,7 +66,7 @@ void MPEPPlanner::CompleteARData(const int key, ARData * const data)
   data->m_weight = w;
 }
 
-void MPEPPlanner::AddVertexToARData(const int vid)
+void MPGUSTPlanner::AddVertexToARData(const int vid)
 {
   Vertex   *v  = m_vertices[vid];
 
@@ -114,7 +114,7 @@ void MPEPPlanner::AddVertexToARData(const int vid)
 
 }
 
-void MPEPPlanner::Initialize(void)
+void MPGUSTPlanner::Initialize(void)
 {
   if(m_cfgTarget == NULL)
   m_cfgTarget = m_sim->NewCfg();
@@ -134,7 +134,7 @@ void MPEPPlanner::Initialize(void)
   }
 }
 
-int MPEPPlanner::AddVertex(Vertex * const v)
+int MPGUSTPlanner::AddVertex(Vertex * const v)
 {
   if(v->m_cfg == NULL)
   {
@@ -170,7 +170,7 @@ int MPEPPlanner::AddVertex(Vertex * const v)
   return vid;
 }
 
-MPEPPlanner::ARData* MPEPPlanner::SelectARData(int * const key)
+MPGUSTPlanner::ARData* MPGUSTPlanner::SelectARData(int * const key)
 {
   ARData *data, *sel = NULL;
   double  wmax = -HUGE_VAL;
@@ -191,7 +191,7 @@ MPEPPlanner::ARData* MPEPPlanner::SelectARData(int * const key)
 }
 
 
-void MPEPPlanner::SelectTarget(const int rid)
+void MPGUSTPlanner::SelectTarget(const int rid)
 {
   m_sim->SampleCfg(m_cfgTarget);
 
@@ -212,7 +212,7 @@ void MPEPPlanner::SelectTarget(const int rid)
   }
 }
 
-int MPEPPlanner::SelectVertexFromARData(const ARData * const data)
+int MPGUSTPlanner::SelectVertexFromARData(const ARData * const data)
 {
   const int    n    = data->m_vids.size();
 

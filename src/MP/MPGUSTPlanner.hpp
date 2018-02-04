@@ -6,12 +6,12 @@
 
 namespace MP
 {
-  class MPEPPlanner : public MPTreePlanner
+  class MPGUSTPlanner : public MPTreePlanner
   {
   public:
-    MPEPPlanner(void);
+    MPGUSTPlanner(void);
 
-    virtual ~MPEPPlanner(void);
+    virtual ~MPGUSTPlanner(void);
 
     virtual void Run(const int nrIters);
 

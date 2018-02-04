@@ -4,7 +4,7 @@
 #include "Utils/Algebra3D.hpp"
 #include "Utils/PseudoRandom.hpp"
 #include "Utils/Flags.hpp"
-#include "MP/MPEPPlanner.hpp"
+#include "MP/MPGUSTPlanner.hpp"
 #include "MP/MPRRTPlanner.hpp"
 #include "MP/MPPlanner.hpp"
 #include "MP/MPSinglePlanner.hpp"
@@ -120,7 +120,7 @@ extern "C" int GRunPlanner(int argc, char **argv)
   enum
   {
     RRTPlanner =0,
-    EPPlanner = 1
+    GUSTPlanner = 1
   };
 
   MP::GRunPlanner gManager;
@@ -137,7 +137,7 @@ extern "C" int GRunPlanner(int argc, char **argv)
     }
     if (plannerType == EPPlanner)
     {
-      gManager.m_planner = new MP::MPEPPlanner();
+      gManager.m_planner = new MP::MPGUSTPlanner();
     }
     gManager.m_planner->m_scene.SetupFromFile(in,query);
     gManager.CompleteSetup();
