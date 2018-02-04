@@ -135,7 +135,7 @@ extern "C" int GRunPlanner(int argc, char **argv)
     {
       gManager.m_planner = new MP::MPRRTPlanner();
     }
-    if (plannerType == EPPlanner)
+    if (plannerType == GUSTPlanner)
     {
       gManager.m_planner = new MP::MPGUSTPlanner();
     }
