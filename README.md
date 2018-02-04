@@ -20,8 +20,11 @@ Example:
 ./bin/Runner GRunPlanner sceneA.txt query0.txt 1
 ```
 plannerType default = 1
+
 0: RRT planner
+
 1: GUST planner
+
 - Press "r" until solved.
 
 ## License
