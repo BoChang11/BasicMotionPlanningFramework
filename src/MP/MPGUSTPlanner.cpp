@@ -44,8 +44,6 @@ namespace MP
         it->second->m_weight /= m_discountSelect;
       }
     }
-    m_vertices[0]->m_cfg[3] =0;
-
   }
 
 void MPGUSTPlanner::CompleteARData(const int key, ARData * const data)
