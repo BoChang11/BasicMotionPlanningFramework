@@ -1,5 +1,5 @@
 # Basic Motion Planning FrameWork
-Include RRT planner, and state-of-the-art GUST planner - Erion Plaku (Region-Guided and Sampling-Based Tree Search )
+Include RRT planner, and state-of-the-art GUST planner (Region-Guided and Sampling-Based Tree Search )
 
 ## Prerequisites
 - OPENGL library
